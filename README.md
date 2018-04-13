@@ -3,6 +3,7 @@ Simple program to create icons from image.
 
 Select image, from which you want to create an icon, and drag it to directory with name image/.<br/>
 &nbsp;&nbsp;![picture alt](https://github.com/sophia-tslk/Icon-creator/blob/master/examples/image_location.png) <br/>
+Image I downloaded from internet. <br/>
 __Attention!__: For clear program working, in directory image/ should be only __one__ image in __.png__ format, no more.<br/>
 
 If you don't have this python3 libraries:<br/>
@@ -29,7 +30,11 @@ If you see this, it means icon has just been created.<br/>
 `Done.`<br/>
 
 So, it's all, icon is located in the same directory `Icon creator`.<br/>
-&nbsp;&nbsp;![picture alt](https://github.com/sophia-tslk/Icon-creator/blob/master/examples/icon%20location.png) <br/>
+&nbsp;&nbsp;![picture alt](https://github.com/sophia-tslk/Icon-creator/blob/master/examples/icon_location.png) <br/>
 Use it for your further purposes.
+<br/><br/>
+
+Program is created thanks to this <a href="https://www.youtube.com/watch?v=QbVni3ot76U">tutorial</a>.<br/>
+<br/>
 
 __Hope, this program will be useful for you)))__
