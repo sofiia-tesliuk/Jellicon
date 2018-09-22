@@ -20,15 +20,17 @@ def image_name():
     :return: name of image (.png format) in directory image.
     """
     image_path = working_directory_path + '/image/'
-    format_file = '*.png'
-    images = glob.glob(image_path + format_file)
+    formats_file = ['*.png', '*.jpg']
+    images = []
+    for format_file in formats_file:
+        images += glob.glob(image_path + format_file)
     if images:
         if len(images) > 1:
             raise ValueError('In directory images/ more than one image')
         else:
             return images[0]
     else:
-        raise ValueError('Directory images/ is empty')
+        raise ValueError('Directory image/ is empty')
 
 
 def icon_set(icon_dir):
