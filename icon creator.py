@@ -39,10 +39,30 @@ def icon_set(icon_dir):
     :creates: folder of scaled icons
     """
     im = Image.open(image_name())
+    im = add_transparent_background(im)
     os.mkdir('{}/{}'.format(working_directory_path, icon_dir))
     for icon in icons:
         im = im.resize(icon[1])
         im.save('{}/{}/{}'.format(working_directory_path, icon_dir, icon[0]))
+
+
+def add_transparent_background(image):
+    # Resize image that it would fit 512*512 square
+    width, height = image.size
+    width_coefficient = 1
+    height_coefficient = 1
+    if width < height:
+        width_coefficient = width / height
+    elif height < width:
+        height_coefficient = height / width
+    image = image.resize((int(512 * width_coefficient), int(512 * height_coefficient)))
+    width, height = image.size
+
+    # Add image on transparent square 512*512
+    tmp = Image.new('RGBA', (512, 512), (0, 0, 0, 0))
+    offset = ((512 - width) // 2, (512 - height) // 2)
+    tmp.paste(image, offset)
+    return tmp
 
 
 def commands_in_terminal(icon_dir):
