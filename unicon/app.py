@@ -1,7 +1,7 @@
 #  Created by Sofiia Tesliuk at 2019-09-29.
-from image import UnImage
+from unicon.image import UnImage
 
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory, abort
+from flask import Flask, render_template, request, redirect, send_from_directory, abort
 
 app = Flask(__name__)
 
