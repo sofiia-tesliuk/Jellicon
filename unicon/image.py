@@ -15,7 +15,7 @@ class UnImage:
     def valid_format(image_filename):
         try:
             return image_filename.lower().split('.')[-1] in ['png', 'jpg', 'jpeg']
-        except IndexError:
+        except (IndexError, TypeError):
             return False
 
     @staticmethod
@@ -31,7 +31,7 @@ class UnImage:
 
     @staticmethod
     def _add_transparent_background(image):
-        # Resize image that it would fit 512*512 square
+        # Resize image that it would fit 1024*1024 square
         width, height = image.size
         width_coefficient = 1
         height_coefficient = 1
@@ -39,11 +39,11 @@ class UnImage:
             width_coefficient = width / height
         elif height < width:
             height_coefficient = height / width
-        image = image.resize((int(512 * width_coefficient), int(512 * height_coefficient)))
+        image = image.resize((int(1024 * width_coefficient), int(1024 * height_coefficient)))
         width, height = image.size
 
-        # Add image on transparent square 512*512
-        tmp = Image.new('RGBA', (512, 512), (0, 0, 0, 0))
-        offset = ((512 - width) // 2, (512 - height) // 2)
+        # Add image on transparent square 1024*1024
+        tmp = Image.new('RGBA', (1024, 1024), (0, 0, 0, 0))
+        offset = ((1024 - width) // 2, (1024 - height) // 2)
         tmp.paste(image, offset)
         return tmp

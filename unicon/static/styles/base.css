@@ -21,12 +21,6 @@ header{
     margin-left: 20px;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 footer{
     background: lightgrey;
     display: flex;
@@ -80,6 +74,6 @@ a{
 
 section{
     text-align: center;
-    margin: 40px;
+    margin-bottom: 40px;
     color: #707070;
 }

@@ -1,21 +1,16 @@
 #  Created by Sofiia Tesliuk at 2019-09-29.
 from unicon.image import UnImage
 
-from flask import Flask, render_template, request, redirect, send_from_directory, abort
+from flask import Flask, render_template, request, url_for, redirect, send_from_directory, abort
 
 app = Flask(__name__)
 
-STORAGE_DIRECTORY = "icons"
+STORAGE_DIRECTORY = "../icons"
 
 downloaded_icons = []
 
 
-@app.route('/')
-def entry_point():
-    return redirect('/upload')
-
-
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload_image():
     if request.method == "POST":
         if request.files:
@@ -25,8 +20,10 @@ def upload_image():
                 return render_template('download.html', icon_filename=icon_filename)
             else:
                 error = 'Invalid image format.'
+                if image.filename == '':
+                    error = 'Image is not selected.'
                 return render_template('upload.html', error=error)
-    return render_template('upload.html', error=None)
+    return render_template('upload.html', error=False)
 
 
 @app.route('/download/<icon_filename>')
