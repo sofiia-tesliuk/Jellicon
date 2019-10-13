@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UnIcon 🦄</title>
+    <link rel="stylesheet" href="../static/styles/base.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <link rel="stylesheet" href="../static/styles/upload.css">
+    <link rel="stylesheet" href="../static/styles/download.css">
+</head>
+<body>
+    <header>
+        <h1 class="header__title">UnIcon</h1>
+        <img class="header__logo" src="../static/images/unicon_logo.png" alt="unicon-logo">
+    </header>
+
+    <section>Create your icon from image!</section>
+
+    <div class="main">
+    {% block main %}{% endblock %}
+    </div>
+
+    <footer>
+        <div class="footer_copyright_and_source">
+            <div class="footer_copyright-text">@ 2019 UnIcon</div>
+            <a href="https://github.com/sofiia-tesliuk/UnIcon">
+                <img class="footer__image image_link" src="../static/images/github_logo.png" alt="github-logo">
+            </a>
+        </div>
+
+        <div class="footer_feedback">
+            <div class="footer_feedback-text">Leave your feedback here: </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnhOyZ0-4V6rA84s9ps4IxQs4DuGW5SklbMXH6JwUJBlhhPQ/viewform?usp=sf_link">
+                <img class="footer__image image_link" src="../static/images/feedback_form.png" alt="github-logo">
+            </a>
+        </div>
+
+        <div class="footer_icons-text">
+            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>,
+            <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> and
+            <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
+            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.
+        </div>
+    </footer>
+</body>
+</html>
