@@ -77,3 +77,9 @@ a{
 .image_link:hover{
     opacity: 0.7;
 }
+
+section{
+    text-align: center;
+    margin: 40px;
+    color: #707070;
+}

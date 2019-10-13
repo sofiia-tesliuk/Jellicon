@@ -1,5 +1,5 @@
 #  Created by Sofiia Tesliuk at 2019-09-29.
-from PIL import Image, IcnsImagePlugin
+from PIL import Image
 
 
 class UnImage:
