@@ -19,13 +19,21 @@ class UnImage:
             return False
 
     @staticmethod
-    def create_icon(path, image):
+    def create_icns(path, image):
+        return UnImage._create_icon(path, image, 'icns')
+
+    @staticmethod
+    def create_ico(path, image):
+        return UnImage._create_icon(path, image, 'ico')
+
+    @staticmethod
+    def _create_icon(path, image, extension):
         img = Image.open(image)
         img = UnImage._add_transparent_background(img)
         try:
-            icon_filename = '{}.icns'.format(image.filename.split('.')[0])
+            icon_filename = '{}.{}'.format(image.filename.split('.')[0], extension)
         except IndexError:
-            icon_filename = 'icon.icns'
+            icon_filename = 'icon.{}'.format(extension)
         img.save('{}/{}'.format(path, icon_filename), sizes=UnImage.icon_sizes)
         return icon_filename
 
