@@ -15,8 +15,15 @@ def upload_image():
     if request.method == "POST":
         if request.files:
             image = request.files["image"]
+            try:
+                print(request.form['extension-radio'])
+            except KeyError:
+                return render_template('upload.html', error="Icon extension is not selected.")
             if UnImage.valid_format(image.filename):
-                icon_filename = UnImage.create_icon(STORAGE_DIRECTORY, image)
+                if request.form['extension-radio'] == 'icns':
+                    icon_filename = UnImage.create_icns(STORAGE_DIRECTORY, image)
+                else:
+                    icon_filename = UnImage.create_ico(STORAGE_DIRECTORY, image)
                 return render_template('download.html', icon_filename=icon_filename)
             else:
                 error = 'Invalid image format.'
@@ -42,6 +49,7 @@ def icon_not_found(error):
 
 @app.errorhandler(404)
 def page_not_found(error):
+    print(error)
     return render_template('error.html', error='404: Page not found.'), 404
 
 
