@@ -1,13 +1,14 @@
 #  Created by Sofiia Tesliuk at 2019-09-29.
-from unicon.image import UnImage
+import os
 
-from flask import Flask, render_template, request, url_for, send_from_directory, abort
+from werkzeug.exceptions import NotFound
+from flask import Flask, render_template, redirect, request, url_for, send_from_directory, after_this_request
+
+from unicon.image import UnImage
 
 app = Flask(__name__)
 
 STORAGE_DIRECTORY = "../icons"
-
-downloaded_icons = []
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -15,16 +16,15 @@ def upload_image():
     if request.method == "POST":
         if request.files:
             image = request.files["image"]
-            try:
-                print(request.form['extension-radio'])
-            except KeyError:
-                return render_template('upload.html', error="Icon extension is not selected.")
             if UnImage.valid_format(image.filename):
-                if request.form['extension-radio'] == 'icns':
-                    icon_filename = UnImage.create_icns(STORAGE_DIRECTORY, image)
-                else:
-                    icon_filename = UnImage.create_ico(STORAGE_DIRECTORY, image)
-                return render_template('download.html', icon_filename=icon_filename)
+                try:
+                    if request.form['extension-radio'] == 'icns':
+                        icon_filename = UnImage.create_icns(STORAGE_DIRECTORY, image)
+                    else:
+                        icon_filename = UnImage.create_ico(STORAGE_DIRECTORY, image)
+                    return render_template('download.html', icon_filename=icon_filename)
+                except KeyError:
+                    return render_template('upload.html', error="Icon extension is not selected.")
             else:
                 error = 'Invalid image format.'
                 if image.filename == '':
@@ -36,10 +36,17 @@ def upload_image():
 @app.route('/download/<icon_filename>')
 def download_icon(icon_filename):
     try:
-        downloaded_icons.append(icon_filename)
+        @after_this_request
+        def cleanup(response):
+            try:
+                os.remove('{}/{}'.format(STORAGE_DIRECTORY, icon_filename))
+            except FileNotFoundError:
+                return response
+            return response
+
         return send_from_directory(STORAGE_DIRECTORY, icon_filename, as_attachment=True)
-    except KeyError:
-        abort(400)
+    except (KeyError, NotFound):
+        return redirect(url_for('upload_image'))
 
 
 @app.errorhandler(400)
@@ -49,8 +56,7 @@ def icon_not_found(error):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    print(error)
-    return render_template('error.html', error='404: Page not found.'), 404
+    return render_template('error.html', error='404: Page or icon not found.'), 404
 
 
 if __name__ == '__main__':
