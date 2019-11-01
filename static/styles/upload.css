@@ -3,12 +3,8 @@ form{
     flex-direction: column;
 }
 
-.image-input_label, .extension-selector-text{
+.image-input_label{
     color: #404040;
-}
-.extension-selector{
-    display: flex;
-    margin-top: 10px;
 }
 
 .image-formats_message{
@@ -23,22 +19,12 @@ button{
     border-radius: 2px;
     padding: 1px;
     font-size: 1em;
-    width: 150px;
+    width: 170px;
     align-self: center;
 }
 
 button:hover{
     opacity: 0.7;
-}
-
-.extension-text{
-    margin-left: 5px;
-    color: #404040;
-    font-size: 0.9em;
-}
-
-.extension{
-    margin-left: 20px;
 }
 
 .error{
