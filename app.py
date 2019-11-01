@@ -4,11 +4,11 @@ import os
 from werkzeug.exceptions import NotFound
 from flask import Flask, render_template, redirect, request, url_for, send_from_directory, after_this_request
 
-from unicon.image import UnImage
+from image import UnImage
 
 app = Flask(__name__)
 
-STORAGE_DIRECTORY = "../icons"
+STORAGE_DIRECTORY = "icons"
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -17,14 +17,8 @@ def upload_image():
         if request.files:
             image = request.files["image"]
             if UnImage.valid_format(image.filename):
-                try:
-                    if request.form['extension-radio'] == 'icns':
-                        icon_filename = UnImage.create_icns(STORAGE_DIRECTORY, image)
-                    else:
-                        icon_filename = UnImage.create_ico(STORAGE_DIRECTORY, image)
-                    return render_template('download.html', icon_filename=icon_filename)
-                except KeyError:
-                    return render_template('upload.html', error="Icon extension is not selected.")
+                icon_filename = UnImage.create_ico(STORAGE_DIRECTORY, image)
+                return render_template('download.html', icon_filename=icon_filename)
             else:
                 error = 'Invalid image format.'
                 if image.filename == '':
