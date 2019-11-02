@@ -2,7 +2,7 @@
 - - - -
 Web application for creating icons from image.
 
-Try demo [**here** 🦄:tada:](https://unicon-icon.herokuapp.com).
+Try demo [**here** 🦄](https://unicon-icon.herokuapp.com).
 
 Leave your feedback [**here** :page_with_curl:]( https://docs.google.com/forms/d/e/1FAIpQLSdnhOyZ0-4V6rA84s9ps4IxQs4DuGW5SklbMXH6JwUJBlhhPQ/viewform?usp=sf_link).
 
@@ -20,7 +20,7 @@ Leave your feedback [**here** :page_with_curl:]( https://docs.google.com/forms/d
 
  - Press <kbd>Download .ico</kbd>
  
- And yes! Now you have a icon from uploaded image :)
+ And yes! Now you have an icon from uploaded image :)
 
 ## Running locally <br/>
 
@@ -29,5 +29,8 @@ Install needed requirements: <br/>
 
 And run next command:<br/>
 `$ python3 app.py`<br/>
+
+
+<br/>
 
 __Hope, this application will be useful for you)))__
