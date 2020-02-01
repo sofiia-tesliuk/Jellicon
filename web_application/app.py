@@ -17,7 +17,8 @@ def upload_image():
         if request.files:
             image = request.files["image"]
             if UnImage.valid_format(image.filename):
-                icon_filename = UnImage.create_ico(STORAGE_DIRECTORY, image)
+                icon_filename = UnImage.create_ico(STORAGE_DIRECTORY, image,
+                                                   UnImage.cut_image_name(image.filename))
                 return render_template('download.html', icon_filename=icon_filename)
             else:
                 error = 'Invalid image format.'

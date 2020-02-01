@@ -1,4 +1,5 @@
 #  Created by Sofiia Tesliuk at 2019-09-29.
+import os
 from PIL import Image
 
 
@@ -19,22 +20,26 @@ class UnImage:
             return False
 
     @staticmethod
-    def create_icns(path, image):
-        return UnImage._create_icon(path, image, 'icns')
+    def cut_image_name(image_path):
+        return os.path.basename(image_path)
 
     @staticmethod
-    def create_ico(path, image):
-        return UnImage._create_icon(path, image, 'ico')
+    def create_icns(path, image, icon_name):
+        return UnImage._create_icon(path, image, icon_name, 'icns')
 
     @staticmethod
-    def _create_icon(path, image, extension):
-        img = Image.open(image)
+    def create_ico(path, image, icon_name):
+        return UnImage._create_icon(path, image, icon_name, 'ico')
+
+    @staticmethod
+    def _create_icon(new_path, image_path, icon_name, extension):
+        img = Image.open(image_path)
         img = UnImage._add_transparent_background(img)
         try:
-            icon_filename = '{}.{}'.format(image.filename.split('.')[0], extension)
+            icon_filename = '{}.{}'.format(icon_name, extension)
         except IndexError:
             icon_filename = 'icon.{}'.format(extension)
-        img.save('{}/{}'.format(path, icon_filename), sizes=UnImage.icon_sizes)
+        img.save('{}/{}'.format(new_path, icon_filename), sizes=UnImage.icon_sizes)
         return icon_filename
 
     @staticmethod
