@@ -10,13 +10,9 @@ Leave your feedback [**here** :page_with_curl:]( https://docs.google.com/forms/d
 
  - Go to the [**demo**](https://unicon-icon.herokuapp.com).
 
-![image](https://drive.google.com/uc?export=view&id=1cM5jOfta2XiC7EMIg6x7jpVE0Xbsdj2l)
-
  - Upload image in **.png** or **.jpg** format.
 
  - Press <kbd>Go!</kbd>
- 
-![image](https://drive.google.com/uc?export=view&id=1RVjRSeFm2W_zExZFg3eOAxhizqAZm314)
 
  - Press <kbd>Download .ico</kbd>
  
