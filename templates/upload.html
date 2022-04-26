@@ -7,7 +7,10 @@
         <input type="file" class="custom-file-input" name="image" id="image">
     </div>
     <label class="image-formats_message">Accepted formats: .jpg, .png</label>
-    <button type="submit" class="btn btn-primary">Go!</button>
+    <div class="format-buttons">
+        <button type="submit" class="btn btn-primary" name="ico" style="margin-right: 10px;">Create <b>.ico</b> <span class="button-helper">(for Windows, Linux, Favicon)</span></button>
+        <button type="submit" class="btn btn-primary" name="icns">Create <b>.icns</b> <span class="button-helper">(for Mac OS)</span></button>
+    </div>
 </form>
 
     {% if error %}
