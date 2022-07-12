@@ -9,23 +9,24 @@ form .form-group{
 }
 
 .image-input_label{
-    color: #404040;
+    color: black;
 }
 
 .image-formats_message{
-    color: #707070;
+    color: black;
     padding-top: 10px;
     font-size: 0.9em;
 }
 
 button{
     margin-top: 20px;
-    background-color: #d2f491;
-    border-color: #d2f491;
+    background-color: #dc9edc;
+    border-color: #dc9edc;
     border-radius: 2px;
     padding: 5px;
     font-size: 1em;
     align-self: center;
+    font-family: fffForwa;
 }
 
 button:hover{
