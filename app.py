@@ -36,12 +36,12 @@ def upload_image():
 
 @app.errorhandler(400)
 def icon_not_found(error):
-    return render_template('error.html', error=error), 400
+    return render_template('error.html', error=error, error_number=400), 400
 
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('error.html', error=error), 404
+    return render_template('error.html', error=error, error_number=404), 404
 
 
 if __name__ == '__main__':

@@ -1,24 +1,24 @@
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-form .form-group{
+form .form-group {
     margin-left: 60px;
 }
 
-.image-input_label{
+.image-input_label {
     color: black;
 }
 
-.image-formats_message{
+.image-formats_message {
     color: black;
     padding-top: 10px;
     font-size: 0.9em;
 }
 
-button{
+button {
     margin-top: 20px;
     background-color: #dc9edc;
     border-color: #dc9edc;
@@ -29,15 +29,21 @@ button{
     font-family: fffForwa;
 }
 
-button:hover{
+button:hover {
     opacity: 0.7;
 }
 
-.error{
-    margin: 0;
+.error {
+    margin: 20px 0 0 0;
     font-size: 0.9em;
-    color: red;
+    color: #912a91;
     text-align: center;
+}
+
+.error-page.error {
+    margin: 0;
+    width: 40%;
+    line-height: 2em;
 }
 
 .format-buttons {

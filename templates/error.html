@@ -1,7 +1,11 @@
 {% extends "index.html" %}
 
 {% block main %}
-{% if error %}
-    <label class=error><strong>Error:</strong> {{ error }}</label>
-{% endif %}
+    {% if error %}
+            <header>
+            <h1 class="font-border"> {{ error_number }}</h1>
+        </header>
+        <label class="error error-page font-border">{{ error }}</label>
+        <img class="jellyfish" id="confused_jellyfish" src="{{ url_for('static', filename='images/confused_jellyfish.png') }}">
+    {% endif %}
 {% endblock %}

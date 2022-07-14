@@ -1,23 +1,25 @@
 {% extends "index.html" %}
 
 {% block main %}
-<header>
-    <h1>JELLICON</h1>
-</header>
+    <header>
+        <h1 class="font-border">JELLICON</h1>
+    </header>
 
-<form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data">
-    <div class="form-group">
-        <label class="image-input_label">Select image:</label>
-        <input type="file" class="custom-file-input" name="image" id="image">
-    </div>
-    <label class="image-formats_message">Accepted formats: .jpg, .png</label>
-    <div class="format-buttons">
-        <button type="submit" class="btn btn-primary" name="ico" style="margin-right: 10px;">Create <b>.ico</b> <span class="button-helper">(for Windows, Linux, Favicon)</span></button>
-        <button type="submit" class="btn btn-primary" name="icns">Create <b>.icns</b> <span class="button-helper">(for Mac OS)</span></button>
-    </div>
-</form>
+    <form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="image-input_label font-border">Select image:</label>
+            <input type="file" class="custom-file-input font-border" name="image" id="image">
+        </div>
+        <label class="image-formats_message font-border">Accepted formats: .jpg, .png</label>
+        <div class="format-buttons">
+            <button type="submit" class="btn btn-primary" name="ico" style="margin-right: 10px;">Create <b>.ico</b> <span class="button-helper">(for Windows, Linux, Favicon)</span></button>
+            <button type="submit" class="btn btn-primary" name="icns">Create <b>.icns</b> <span class="button-helper">(for Mac OS)</span></button>
+        </div>
+    </form>
 
     {% if error %}
-    <label class=error><strong>Error:</strong> {{ error }}</label>
+        <label class="error font-border"><strong>Error:</strong> {{ error }}</label>
     {% endif %}
+
+    <img class="jellyfish" id="main_jellyfish" src="{{ url_for('static', filename='images/confused_jellyfish.png') }}">
 {% endblock %}
