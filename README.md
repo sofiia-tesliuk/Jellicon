@@ -1,5 +1,9 @@
-![picture alt](https://github.com/sofiia-tesliuk/Jellicon/blob/master/logo.png)
+<p align="center">
+  <img src="https://github.com/sofiia-tesliuk/Jellicon/blob/master/logo.png">
+</p>
+
 - - - -
+
 Web application for creating **.ico** and **.icns** files from image.
 
 Try demo [**here**](https://unicon-icon.herokuapp.com).

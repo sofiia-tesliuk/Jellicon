@@ -30,7 +30,8 @@ button {
 }
 
 button:hover {
-    opacity: 0.7;
+    background-color: #d881d8;
+    border-color: #d881d8;
 }
 
 .error {
@@ -52,4 +53,28 @@ button:hover {
 
 .button-helper{
     font-size: 0.9em;
+}
+
+.vertical-block.algae {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+#high_algae {
+    background: url('../images/high_algae.png');
+    height: 128px;
+}
+
+.lower_algae {
+    height: 64px;
+}
+
+#lower_algae_1 {
+    background: url('../images/lower_algae_1.png');
+}
+
+#lower_algae_2 {
+    background: url('../images/lower_algae_2.png');
+    background-position-x: 32px;
 }
