@@ -31,6 +31,14 @@ html {
     bottom: 0;
 }
 
+#algae {
+    background: url('../images/algae.png');
+    height: 128px;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
 a{
     color: #616161;
 }

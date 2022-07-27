@@ -1,4 +1,4 @@
-![picture alt](https://github.com/sofiia-tesliuk/Jellyicon/blob/master/readme_logo.png)
+![picture alt](https://github.com/sofiia-tesliuk/Jellicon/blob/master/logo.png)
 - - - -
 Web application for creating **.ico** and **.icns** files from image.
 
