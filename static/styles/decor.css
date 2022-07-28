@@ -1,0 +1,41 @@
+/* JELLYFISHES */
+
+.jellyfish {
+    height: 160px;
+}
+
+#confused_jellyfish {
+    margin-top: 20px;
+}
+
+#main_jellyfish {
+    position: absolute;
+    left: 10%;
+    top: 40%;
+}
+
+/* ALGAE */
+
+.vertical-block.algae {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+#high_algae {
+    background: url('../images/high_algae.png');
+    height: 128px;
+}
+
+.lower_algae {
+    height: 64px;
+}
+
+#lower_algae_1 {
+    background: url('../images/lower_algae_1.png');
+}
+
+#lower_algae_2 {
+    background: url('../images/lower_algae_2.png');
+    background-position-x: 32px;
+}
