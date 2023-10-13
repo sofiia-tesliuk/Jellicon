@@ -39,3 +39,51 @@
     background: url('../images/lower_algae_2.png');
     background-position-x: 32px;
 }
+
+.main span.bubble {
+    position: absolute;
+    bottom: 50px;
+
+    pointer-events: none;
+    animation: bubble_up linear infinite;
+}
+
+.bubble.bubble_1 {
+    background: url('../images/bubble_1.png');
+    width: 6px;
+    height: 6px;
+}
+
+.bubble.bubble_2 {
+    background: url('../images/bubble_2.png');
+    width: 16px;
+    height: 16px;
+}
+
+.bubble.bubble_3 {
+    background: url('../images/bubble_3.png');
+    width: 26px;
+    height: 26px;
+}
+
+.bubble.bubble_4 {
+    background: url('../images/bubble_4.png');
+    width: 32px;
+    height: 30px;
+}
+
+@keyframes bubble_up {
+    0% {
+        top: 95%;
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
